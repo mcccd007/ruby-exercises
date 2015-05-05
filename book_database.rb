@@ -12,7 +12,7 @@ class BookDatabase
     if books == nil
       puts "No such author"
     else
-      puts books.length
+      return books.length
     end
   end
 
@@ -24,7 +24,7 @@ class BookDatabase
       end
     end
     if result
-      puts result
+      return result
     else
       puts "No such book"
     end
@@ -49,10 +49,10 @@ class BookDatabase
       if books.include? title
         books.delete title
       else
-        puts "No such title"
+        return "No such title"
       end
     else
-      puts "No such author"
+      return "No such author"
     end
   end
 end

@@ -4,7 +4,7 @@ require_relative '../lib/response'
 RSpec.describe 'Eliza answers' do
   Response.add_response 'foo', 'foo response'
   Response.add_response 'bar', 'bar1', 'bar2'
-  # Response.add_dummies 'Tell me more', "That's interesting.", 'Go on'
+  Response.add_dummies 'Tell me more', "That's interesting.", 'Go on'
 
   describe 'Can retrieve answers' do
     it 'returns the single response when there is one' do
@@ -16,7 +16,6 @@ RSpec.describe 'Eliza answers' do
     end
 
     it 'returns a dummy response when there is no match' do
-      pending "No dummy responses yet"
       expect(['Tell me more', "That's interesting.", 'Go on']).to include(
           Response.get_answer('blergh'))
     end
