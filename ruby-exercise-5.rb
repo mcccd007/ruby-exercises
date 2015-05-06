@@ -1,4 +1,5 @@
 #When doing this exercise, use methods when appropriate to keep things organized.
+require 'Set'
 
 snowy = File.read 'the-man-from-snowy-river.txt'
 clancy = File.read 'clancy-of-the-overflow.txt'

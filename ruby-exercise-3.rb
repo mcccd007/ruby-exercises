@@ -9,6 +9,14 @@ def starts_with_vowel s
   %w{a e i o u}.include? s[0].downcase #Can you see why we use downcase here?
 end
 
+def odd_number_words s
+  to_words(s).count.odd?
+end
+
+def last_word s
+  s.split(/[\W]+/).last
+end
+
 snowy = File.read 'the-man-from-snowy-river.txt'
 
 snowy_lines = snowy.lines
@@ -23,15 +31,22 @@ end
 
 puts
 puts "Here are the lines of Snowy that have an odd number of words"
+puts
 #hint: a % b is the remainder after you divide a by b (called "mod" or "modulus")
 # for example 17 % 2 == 1
-puts "…"
+  snowy_lines.each do |k|
+  puts k if odd_number_words k
+end
 
 puts
 puts "Here are all the rhyming pairs from the ends of the Snowy lines"
 i = 0
 while i < snowy_lines.count
-
+  [0, 1, 4, 5].each do |n|
+    first_word = last_word snowy_lines[i + n]
+    second_word = last_word snowy_lines[i + n + 2]
+    puts "#{first_word}, #{second_word}"
+  end
   puts
   i += 9 # This is a short way of writing i = i + 1
 end

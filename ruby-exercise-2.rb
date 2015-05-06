@@ -17,11 +17,18 @@ puts
 puts "Here are the lines of Snowy that have an odd number of words"
 #hint: a % b is the remainder after you divide a by b (called "mod" or "modulus")
 # for example 17 % 2 == 1
-puts "…"
+puts
+  snowy_lines.each do |m|
+    if m.split(split_pattern).count % 2 == 1
+      puts ' ' + m
+  end
+end
 
 puts
 puts "Here is Snowy double-spaced"
-puts "…"
+  p = snowy_lines.each do |h|
+puts "\n" + h
+end
 
 puts
 puts "Here are all the rhyming pairs from the ends of the Snowy lines"
@@ -33,6 +40,19 @@ while i < snowy_lines.count
   # get the last word from the words using .last
   # grab the last words four at a time and then print out the first and third,
   # then the second and fourth
+  a = snowy_lines[i].split(split_pattern).last
+  aa = snowy_lines[i + 1].split(split_pattern).last
+  b = snowy_lines[i + 2].split(split_pattern).last
+  bb = snowy_lines[i + 3].split(split_pattern).last
+  c = snowy_lines[i + 4].split(split_pattern).last
+  cc = snowy_lines[i + 5].split(split_pattern).last
+  d = snowy_lines[i + 6].split(split_pattern).last
+  dd = snowy_lines[i + 7].split(split_pattern).last
+  puts "#{a}, #{b}"
+  puts "#{aa}, #{bb}"
+  puts "#{c}, #{d}"
+  puts "#{cc}, #{dd}"
+
   puts
   i += 9 # This is a short way of writing i = i + 1
 end
